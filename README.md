@@ -9,7 +9,20 @@ Seremos capaces de pintarlo tal que así con React?
 
 ***
 
+## Instrucciones
+
+Añadiendo nuestra constante de datos al archivo App.js hay que pintar la lista de clubes con:
+
+* Icono
+* Nombre del club
+* Listado de miembros
+
+En una primera fase lo importante es pintar los datos pero el objetivo es crear dos componentes más:
+- **ClubList.js** con la lista de clubes
+- **Club.js** con cada card de cada club
+
 ## Datos
+
 ```js
 const clubs = [
   {
