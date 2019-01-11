@@ -1,139 +1,68 @@
-# Mis clubes favoritos
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Vamos a recordad nuestros tiempos de universidad y de clubes de actividades, con React!
+## Available Scripts
 
-A continuación tenemos una constante con información de nuestros clubes favoritos, del icono que usan (eran unos adelantados usando FontAwesome) y su lista de miembros.
+In the project directory, you can run:
 
-Seremos capaces de pintarlo tal que así con React?
-![Guía de clubes](assets/guia.png)
+### `npm start`
 
-***
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Instrucciones
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-Añadiendo nuestra constante de datos al archivo App.js hay que pintar la lista de clubes con:
+### `npm test`
 
-* Icono
-* Nombre del club
-* Listado de miembros
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-En una primera fase lo importante es pintar los datos pero el objetivo es crear dos componentes más:
-- **ClubList.js** con la lista de clubes
-- **Club.js** con cada card de cada club
+### `npm run build`
 
-## Datos
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```js
-const clubs = [
-  {
-    "name": "Book club",
-    "fa": "fas fa-glasses",
-    "members": [
-      "Rosalie Bradley",
-      "Lula Day",
-      "Hallie Bryant",
-      "Antonio Martin",
-      "Polly Nelson"
-    ]
-  },
-  {
-    "name": "Chess club",
-    "fa": "fas fa-chess",
-    "members": [
-      "Francisco Alexander",
-      "Alice Garner",
-      "Michael Elliott",
-      "Tyler Sparks",
-      "Rose Munoz",
-      "Lena Rios",
-      "Abbie Perkins"
-    ]
-  },
-  {
-    "name": "Escape room club",
-    "fa": "fas fa-dungeon",
-    "members": [
-      "Della Frank",
-      "Nathan Briggs",
-      "Alexander Caldwell",
-      "John McCarthy",
-      "Theodore Lawson"
-    ]
-  },
-  {
-    "name": "Thief club",
-    "fa": "fas fa-mask",
-    "members": [
-      "Ina Becker",
-      "Jared Bryan",
-      "Eugenia Crawford",
-      "Mina Goodwin",
-      "Hester Rodriquez",
-      "Cameron Watts",
-      "Charles Daniel",
-      "Christine Barnes"
-    ]
-  },
-  {
-    "name": "Fight club",
-    "fa": "fas fa-fist-raised",
-    "members": [
-      "Bernice Marshall",
-      "Alvin McCormick",
-      "Aiden Edwards",
-      "Daniel Mendoza",
-      "Olive Poole"
-    ]
-  },
-  {
-    "name": "Magic club",
-    "fa": "fas fa-wand-magic",
-    "members": [
-      "Harry Ruiz",
-      "Tom Dunn",
-      "Emily Gonzales",
-      "Evelyn Snyder",
-      "Evan Doyle",
-      "Stanley Mann",
-      "Tom Nash",
-      "Glenn Luna",
-      "Hattie McCoy",
-      "Erik Cobb",
-      "Ada Warren",
-      "Lucy Webb"
-    ]
-  },
-  {
-    "name": "Live long and prosper club",
-    "fa": "fas fa-hand-spock",
-    "members": [
-      "Shane Lambert",
-      "Willie Young",
-      "Jane Hunt",
-      "Martha Houston",
-      "Clyde Johnston",
-      "Jonathan Brooks",
-      "Emily Howard",
-      "Steven Peters",
-      "Helen Stewart",
-      "John Cox",
-      "Lillie Moore",
-      "Chris Walters",
-      "Sally Cunningham",
-      "Ada Klein",
-      "Fanny Kelly",
-      "Jane Norton",
-      "Bertha Francis",
-      "Jane Scott",
-      "Etta Klein",
-      "Bobby Rodriguez",
-      "Tyler Goodman",
-      "Peter Ferguson",
-      "Theresa Hudson",
-      "Lloyd Soto",
-      "Stanley Hardy",
-      "Bobby Stewart"
-    ]
-  }
-];
-```
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
