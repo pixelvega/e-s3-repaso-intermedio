@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import clubPropTypes from './club-proptypes';
 
-class Club extends Component {
-  render() {
-    const { title, icon, members } = this.props;
-    return (
-      <li>
-        <h2>{title}</h2>
-        <i className={icon} />
-        <h3>Miembros:</h3>
-        <ul>
-          {members.map((member, i) => {
-            return <li key={i}>{member}</li>;
-          })}
-        </ul>
-      </li>
-    );
-  }
-}
+const Club = ({ name, fa, members }) => (
+  <li>
+    <h2>{name}</h2>
+    <i className={fa} />
+    <h3>Miembros:</h3>
+    <ul>
+      {members.map((member, i) =>
+        <li key={i}>{member}</li>
+      )}
+    </ul>
+  </li>
+);
 
-Club.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  members: PropTypes.array.isRequired
-};
+Club.propTypes = clubPropTypes;
 
 export default Club;
