@@ -2,132 +2,63 @@ import React, { Component } from 'react';
 import ClubList from './components/ClubList';
 import './App.css';
 
+const url = 'https://raw.githubusercontent.com/Adalab/e-s3-repaso-intermedio/master/data/cool-clubs.json';
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state= {
-      clubs: [
-        {
-          "name": "Book club",
-          "fa": "fas fa-glasses",
-          "members": [
-            "Rosalie Bradley",
-            "Lula Day",
-            "Hallie Bryant",
-            "Antonio Martin",
-            "Polly Nelson"
-          ]
-        },
-        {
-          "name": "Chess club",
-          "fa": "fas fa-chess",
-          "members": [
-            "Francisco Alexander",
-            "Alice Garner",
-            "Michael Elliott",
-            "Tyler Sparks",
-            "Rose Munoz",
-            "Lena Rios",
-            "Abbie Perkins"
-          ]
-        },
-        {
-          "name": "Escape room club",
-          "fa": "fas fa-dungeon",
-          "members": [
-            "Della Frank",
-            "Nathan Briggs",
-            "Alexander Caldwell",
-            "John McCarthy",
-            "Theodore Lawson"
-          ]
-        },
-        {
-          "name": "Thief club",
-          "fa": "fas fa-mask",
-          "members": [
-            "Ina Becker",
-            "Jared Bryan",
-            "Eugenia Crawford",
-            "Mina Goodwin",
-            "Hester Rodriquez",
-            "Cameron Watts",
-            "Charles Daniel",
-            "Christine Barnes"
-          ]
-        },
-        {
-          "name": "Fight club",
-          "fa": "fas fa-fist-raised",
-          "members": [
-            "Bernice Marshall",
-            "Alvin McCormick",
-            "Aiden Edwards",
-            "Daniel Mendoza",
-            "Olive Poole"
-          ]
-        },
-        {
-          "name": "Magic club",
-          "fa": "fas fa-wand-magic",
-          "members": [
-            "Harry Ruiz",
-            "Tom Dunn",
-            "Emily Gonzales",
-            "Evelyn Snyder",
-            "Evan Doyle",
-            "Stanley Mann",
-            "Tom Nash",
-            "Glenn Luna",
-            "Hattie McCoy",
-            "Erik Cobb",
-            "Ada Warren",
-            "Lucy Webb"
-          ]
-        },
-        {
-          "name": "Live long and prosper club",
-          "fa": "fas fa-hand-spock",
-          "members": [
-            "Shane Lambert",
-            "Willie Young",
-            "Jane Hunt",
-            "Martha Houston",
-            "Clyde Johnston",
-            "Jonathan Brooks",
-            "Emily Howard",
-            "Steven Peters",
-            "Helen Stewart",
-            "John Cox",
-            "Lillie Moore",
-            "Chris Walters",
-            "Sally Cunningham",
-            "Ada Klein",
-            "Fanny Kelly",
-            "Jane Norton",
-            "Bertha Francis",
-            "Jane Scott",
-            "Etta Klein",
-            "Bobby Rodriguez",
-            "Tyler Goodman",
-            "Peter Ferguson",
-            "Theresa Hudson",
-            "Lloyd Soto",
-            "Stanley Hardy",
-            "Bobby Stewart"
-          ]
-        }
-      ]
+      clubs: [],
+      query: ''
     }
+    console.log('Inicializo el estado a []');
+    this.filter = this.filter.bind(this);
   }
+
+  
+
+  getClubs() {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+
+        const newData = data.map((item, index) =>{
+          return {...item, id: index}
+        });
+
+        this.setState({
+          clubs: newData
+        });
+      });
+  }
+
+  filter(e) {
+    const query = e.currentTarget.value;
+    this.setState({
+      query: query
+    })
+  }
+
   render() {
+    if (this.state.clubs.length < 1) {
+      console.log('Pinto lo que haya pero no hay na, porque de primeras hay un array vacío, pero luego va a haber datos y este mensaje va a salir dos veces. DOS!!!');
+    } else {
+      console.log('Hola, soy yo de nuevo, pero ahora con datos. Toma ya!');
+    }
+    
     const {clubs} = this.state;
     return (
       <div className="App">
-        <ClubList clubs={clubs} />
+        <input type="text" onKeyUp={this.filter}/>
+        <ClubList clubs={clubs.filter(item=>item.name.includes(this.state.query))} />
       </div>
     );
+  }
+  
+  componentDidMount() {
+    console.log('Ya se ha pintado todo, pero sin datos, y ahora entro yo y los pido, y lo hago todo')
+    this.getClubs();
   }
 }
 
